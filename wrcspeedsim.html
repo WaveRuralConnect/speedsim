@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Internet Download Speed Sim</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            
+            body {
+                font-family: sans-serif;
+                padding:0px;
+            }
+            
+            .progress {
+                height: 25px;
+                width:100%;
+                max-width:600px;
+                margin-bottom:10px;
+            }
+            .progress > svg {
+                height: 100%;
+                display: block;
+            }
+            
+            .button {
+                background-color: #93c953;
+                border: none;
+                color: white;
+                padding: 15px 15px;
+                margin-bottom:10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 22px;
+                border-radius:10px;
+                }
+            
+            .button:focus {
+                outline:none;
+                background-color:#4F8D04;
+            }
+            
+            button:hover {
+                background-color:#4F8D04;
+            }
+            
+            .speed-label {
+                font-size:18px;
+            }
+            
+            #filesize {
+                font-size:18px;
+            }
+            
+            .progress-wrapper {
+                width:95%;
+                max-width:600px;
+                height:25px;
+                border:1px solid #93c953;
+                margin-bottom: 10px;
+            }
+            
+            .time {
+               display:inline;
+                float:right;
+            }
+            
+            #container {
+                max-width:600px;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <button onclick="showSpeed(2, 'Standard web page, 2 Mb')" class="button">Browsing</button>
+            <button onclick="showSpeed(50, '8-minute video, 25 Mb')" class="button">Video</button>
+            <button onclick="showSpeed(4000, '1 HD movie, 4 Gb')" class="button">HD Movie</button>
+            <button onclick="showSpeed(108, '45-hour high quality MP3 album, 108 Mb')" class="button">Music</button>
+            <button onclick="showSpeed(60, '20 photos, 60 Mb')" class="button">Photos</button>
+
+            <div id="filesize">File:</div>
+            <br>
+            <span class="speed-label">Gigabit </span><span id="gigtime" class="time"> </span>
+            <div class="progress-wrapper">
+                <div class="progress" id="fast"></div>
+            </div>
+
+            <span class="speed-label">100 Mbps</span><span id="medtime" class="time"></span>
+            <div class="progress-wrapper">
+                <div class="progress" id="medium"></div>
+            </div>
+            <span class="speed-label">50 Mbps</span><span id="slowtime" class="time"></span>
+            <div class="progress-wrapper">
+                <div class="progress" id="slow"></div>
+            </div>
+        </div>
+        
+
+
+                
+
+        <script src="https://github.com/kimmobrunfeldt/progressbar.js/blob/master/dist/progressbar.min.js"></script>
+        <script src="speedsim.js"></script>
+    </body>
+</html>
